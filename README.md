@@ -1,4 +1,4 @@
-1.Query to find Second Highest Salary of Employee?(click for explaination)
+**1.Query to find Second Highest Salary of Employee?(click for explaination)**
 
 Answer:
 
@@ -8,7 +8,7 @@ Alternative Solution : Suggested by Ankit Srivastava
 
 select min(salary)from(select distinct salary from emp order by salary desc)where rownum<=2;
 
-2.Query to find duplicate rows in table?(click here for explaination )
+**2.Query to find duplicate rows in table?(click here for explaination )**
 
 Answer :
 
