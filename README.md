@@ -14,7 +14,7 @@ Answer :
 
 Select * from Employee a where rowid <>( select max(rowid) from Employee b where a.Employee_num=b.Employee_num);
 
-3.How to fetch  monthly Salary of Employee if annual salary is given?(click here for Explaination) 
+**3.How to fetch  monthly Salary of Employee if annual salary is given?(click here for Explaination)**
 
 Answer:
 
@@ -22,7 +22,7 @@ Answer:
 
 Click here to get information on ROW_ID
 
-4.What is the Query to fetch first record from Employee table? (90% asked Complex SQL Queries Examples)
+**4.What is the Query to fetch first record from Employee table? (90% asked Complex SQL Queries Examples)**
 
 Answer:
 
@@ -32,7 +32,7 @@ Select * from Employee where Rowid= select min(Rowid) from Employee;
 
 Click here to get What is Rownum?
 
-5.What is the Query to fetch last record from the table?
+**5.What is the Query to fetch last record from the table?**
 
 Answer:
 
@@ -42,7 +42,7 @@ Complex SQL Queries Examples
 Complex SQL Queries
 Click here to get 20 interview questions on Perforance Tuning..
 
-6.What is Query to display first 5 Records from Employee table?(90% asked Complex SQL Queries Examples)
+**6.What is Query to display first 5 Records from Employee table?(90% asked Complex SQL Queries Examples)**
 
 Answer:
 
@@ -52,7 +52,7 @@ Select * from Employee where Rownum <= 5;
  
 CLICK HERE TO GET INFORMATION ON NORMALIZATION
 
-6.What is Query to display last 5 Records from Employee table?(90% asked Complex SQL Queries Examples)
+**6.What is Query to display last 5 Records from Employee table?(90% asked Complex SQL Queries Examples)**
 
 Answer:
 
@@ -64,14 +64,14 @@ select * from (Select * from Employee e order by rowid desc) where rownum <=5;
 
 Click Here to get What is Union?
 
-7.What is Query to display Nth Record from Employee table?
+**7.What is Query to display Nth Record from Employee table?**
 
 Answer :
 
 select * from ( select a.*, rownum rnum from ( YOUR_QUERY_GOES_HERE — including the order by ) a where rownum <= N_ROWS ) where rnum >= N_ROWS
 
  
-8.How to get 3 Highest salaries records from Employee table?
+**8.How to get 3 Highest salaries records from Employee table?**
 
 Answer:
 
@@ -81,20 +81,20 @@ Alternative Solution: Suggested by Ankit Srivastava
 
 select min(salary)from(select distinct salary from emp order by salary desc)where rownum<=3;
 
-9.How to Display Odd rows in Employee table?(90% asked Complex SQL Queries Examples)
+**9.How to Display Odd rows in Employee table?(90% asked Complex SQL Queries Examples)**
 
 Answer:
 
 Select * from(Select rownum as rno,E.* from Employee E) where Mod(rno,2)=1;
 
-10.How to Display Even rows in Employee table?
+**10.How to Display Even rows in Employee table?**
 
 Answer:
 
 Select * from(Select rownum as rno,E.* from Employee) where Mod(rno,2)=0;
 
           Learn SQL Server Course here: SQL Server Training
-11.How to fetch 3rd highest salary using Rank Function?
+**11.How to fetch 3rd highest salary using Rank Function?**
 
 Answer:
 
@@ -102,20 +102,20 @@ select * from (Select Dense_Rank() over ( order by  salary desc) as Rnk,E.* from
 
 Click Here to Get Information on Rank and Dense_Rank
 
-12.How Can i create table with same structure of Employee table?(90% asked Complex SQL Queries Examples)
+**12.How Can i create table with same structure of Employee table?(90% asked Complex SQL Queries Examples)**
 
 Answer:
 
 Create table Employee_1 as Select * from Employee where 1=2;
 
-13.Display first 50% records from Employee table?
+**13.Display first 50% records from Employee table?**
 
 
 Answer:
 
 select rownum, e.* from emp e where rownum<=(select count(*)/2 from emp);
 
-14.Display last 50% records from Employee table?
+**14.Display last 50% records from Employee table?**
 
 Answer:
 
@@ -125,13 +125,13 @@ minus
 
 Select rownum,E.* from Employee E where rownum<=(Select count(*)/2) from Employee);
 
-15.How Can i create table with same structure with data of Employee table?
+**15.How Can i create table with same structure with data of Employee table?**
 
 Answer:
 
 Create table Employee1 as select * from Employee;
 
-16.How do i fetch only common records between 2 tables.
+**16.How do i fetch only common records between 2 tables.**
 
 Answer:
 
@@ -143,25 +143,25 @@ Select * from Employee1;
 
 CLICK HERE TO GET INFORMATION ABOUT INTERSECT OPERATOR
 
-17.Find Query to get information of Employee where Employee is not assigned to the department
+**17.Find Query to get information of Employee where Employee is not assigned to the department**
 
 Answer:
 
 Select * from Employee where Dept_no Not in(Select Department_no from Department);
 
-18.How to get distinct records from the table without using distinct keyword.
+**18.How to get distinct records from the table without using distinct keyword.**
 
 Answer:
 
 select * from Employee a where  rowid = (select max(rowid) from Employee b where  a.Employee_no=b.Employee_no);
 
-19.Select all records from Employee table whose name is ‘Amit’ and ‘Pradnya’
+**19.Select all records from Employee table whose name is ‘Amit’ and ‘Pradnya’**
 
 Answer:
 
 Select * from Employee where Name in(‘Amit’,’Pradnya’);
 
-20.Select all records from Employee table where name not in ‘Amit’ and ‘Pradnya’
+**20.Select all records from Employee table where name not in ‘Amit’ and ‘Pradnya’**
 
 Answer:
 
@@ -169,7 +169,7 @@ select * from Employee where name Not  in (‘Amit’,’Pradnya’);
 
 Click Here to get  20 Interview Questions for Tech Mahindra….
 
-21.how to write sql query for the below scenario
+**21.how to write sql query for the below scenario**
 I/p:ORACLE
 
 O/p:
@@ -179,14 +179,14 @@ A
 C
 L
 E
-i.e, splitting into multiple columns a string using sql.
+i.e, splitting into multiple columns a string using sql
 
 Answer:
 
 Select Substr(‘ORACLE’,Level,1) From Dual
 Connect By Level<= Length(‘ORACLE’);
 
-22.How to fetch all the records from Employee whose joining year is  2017?
+**22.How to fetch all the records from Employee whose joining year is  2017?**
 
 Answer:
 
@@ -198,25 +198,25 @@ MS SQL:
 
 select * from Employee where substr(convert(varchar,Joining_date,103),7,4)=’2017′;
 
-23.What is SQL Query to find maximum salary of each department?
+**23.What is SQL Query to find maximum salary of each department?**
 
 Answer:
 
 Select Dept_id,max(salary) from Employee group by Dept_id;
 
-24.How Do you find all Employees with its managers?(Consider there is manager id also in Employee table)
+**24.How Do you find all Employees with its managers?(Consider there is manager id also in Employee table)**
 
 Answer:
 
 Select e.employee_name,m.employee name from Employee e,Employee m where e.Employee_id=m.Manager_id;
 
-25.Display the name of employees who have joined in 2016 and salary is greater than 10000?
+**25.Display the name of employees who have joined in 2016 and salary is greater than 10000?**
 
 Answer:
 
 Select name from Employee where Hire_Date like ‘2016%’ and salary>10000;
 
-26.How to display following using query?
+**26.How to display following using query?**
 
 *
 
@@ -230,7 +230,7 @@ We cannot use dual table to display output given above. To display output use an
 
 SELECT lpad (‘*’, ROWNUM,’*’) FROM Student WHERE ROWNUM <4;
 
-27.How to add the email validation using only one query?
+**27.How to add the email validation using only one query?**
 
 Answer :
 
@@ -242,7 +242,7 @@ FROM
 Employee
 where NOT REGEXP_LIKE(Email, ‘[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}’, ‘i’);
 
-28.How to display 1 to 100 Numbers with query?
+**28.How to display 1 to 100 Numbers with query?**
 
 Answer:
 
@@ -250,7 +250,7 @@ Select level from dual connect by level <=100;
 
 Tip: User needs to know the concept of Hierarchical queries. Click here to get concept of hierarchical queries
 
-29.How to remove duplicate rows from table?(100% asked in Complex SQL Queries for Interviews)
+**29.How to remove duplicate rows from table?(100% asked in Complex SQL Queries for Interviews)**
 
 Answer:
 
@@ -268,7 +268,7 @@ Delete FROM Student WHERE ROWID <>
 
 (Select max (rowid) from Student b where rollno=b.rollno);
 
-30.How to find count of duplicate rows? (95% asked in SQL queries for Interviews )
+**30.How to find count of duplicate rows? (95% asked in SQL queries for Interviews )**
 
 Answer:
 
@@ -280,13 +280,13 @@ Having count (rollno)>1
 
 Order by count (rollno) desc;
 
-31.How to Find the Joining date of Employee in YYYY-DAY-Date format.
+**31.How to Find the Joining date of Employee in YYYY-DAY-Date format.**
 
 Select FIRST_NAME, to_char(joining_date,’YYYY’) JoinYear , to_char(joining_date,’Mon’), to_char(joining_date,’dd’) from EMPLOYEES;
 
 Hope This article named Complex SQL queries examples is useful to all the programmers. This article gives you the idea about Complex SQL Queries examples and will be useful to all the programmers.
 
-Question 32 : How to convert the System time in to seconds in oracle?
+**Question 32 : How to convert the System time in to seconds in oracle?**
 
 Answer :
 
